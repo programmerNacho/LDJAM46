@@ -101,6 +101,7 @@ public class InteractionManager : MonoBehaviour
             Vector3 toDestination = holdPoint - currentInteractableObjectRigidbody.position;
             Vector3 force = toDestination / Time.fixedDeltaTime;
 
+            currentInteractableObjectRigidbody.angularVelocity = Vector3.zero;
             currentInteractableObjectRigidbody.velocity = Vector3.zero;
             currentInteractableObjectRigidbody.AddForce(force, ForceMode.Impulse);
         }
