@@ -2120,6 +2120,7 @@ MonoBehaviour:
   maxGrabDistance: 5
   minGrabDistance: 1
   zoomVelocity: 0.5
+  rotateSpeed: 180
   throwStrength: 50
 --- !u!4 &316620744 stripped
 Transform:

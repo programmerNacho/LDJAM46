@@ -15,9 +15,10 @@ public class InteractionManager : MonoBehaviour
     [SerializeField]
     private float zoomVelocity;
     [SerializeField]
+    private float rotateSpeed;
+    [SerializeField]
     private float throwStrength;
 
-    private Interactable currentInteractableObject;
     private Rigidbody currentInteractableObjectRigidbody;
     private RigidbodyInterpolation initialInterpolationSetting;
     private int initialLayer;
@@ -31,7 +32,7 @@ public class InteractionManager : MonoBehaviour
 
     private void Update()
     {
-        if(currentInteractableObject == null)
+        if(currentInteractableObjectRigidbody == null)
         {
             if(Input.GetMouseButtonDown(0))
             {
@@ -40,18 +41,14 @@ public class InteractionManager : MonoBehaviour
 
                 if(Physics.Raycast(ray, out hit, maxGrabDistance, interactionLayer, QueryTriggerInteraction.Ignore))
                 {
-                    currentInteractableObject = hit.transform.GetComponent<Interactable>();
-                    if(currentInteractableObject != null)
+                    currentInteractableObjectRigidbody = hit.transform.GetComponent<Rigidbody>();
+                    if(currentInteractableObjectRigidbody != null)
                     {
                         currentGrabDistance = Mathf.Clamp(hit.distance, minGrabDistance, maxGrabDistance);
-                        currentInteractableObjectRigidbody = currentInteractableObject.GetComponent<Rigidbody>();
-                        if(currentInteractableObjectRigidbody != null)
-                        {
-                            initialInterpolationSetting = currentInteractableObjectRigidbody.interpolation;
-                            initialLayer = currentInteractableObjectRigidbody.gameObject.layer;
-                            currentInteractableObjectRigidbody.gameObject.layer = LayerMask.NameToLayer(noCollisionInteractionLayer); ;
-                            currentInteractableObjectRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-                        }
+                        initialInterpolationSetting = currentInteractableObjectRigidbody.interpolation;
+                        initialLayer = currentInteractableObjectRigidbody.gameObject.layer;
+                        currentInteractableObjectRigidbody.gameObject.layer = LayerMask.NameToLayer(noCollisionInteractionLayer); ;
+                        currentInteractableObjectRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
                     }
                 }
             }
@@ -62,17 +59,15 @@ public class InteractionManager : MonoBehaviour
             {
                 if(currentInteractableObjectRigidbody != null)
                 {
-                    currentInteractableObject = null;
                     currentInteractableObjectRigidbody.interpolation = initialInterpolationSetting;
                     currentInteractableObjectRigidbody.gameObject.layer = initialLayer;
                     currentInteractableObjectRigidbody = null;
                 }
             }
-            else if(Input.GetMouseButtonDown(1))
+            else if(Input.GetMouseButtonUp(1))
             {
                 if (currentInteractableObjectRigidbody != null)
                 {
-                    currentInteractableObject = null;
                     currentInteractableObjectRigidbody.interpolation = initialInterpolationSetting;
                     currentInteractableObjectRigidbody.gameObject.layer = initialLayer;
                     currentInteractableObjectRigidbody.velocity = Vector3.zero;
@@ -85,12 +80,22 @@ public class InteractionManager : MonoBehaviour
             {
                 currentGrabDistance = Mathf.Clamp(currentGrabDistance + mouseScrollWheelInput * zoomVelocity, minGrabDistance, maxGrabDistance);
             }
+            if(Input.GetKey(KeyCode.E))
+            {
+                Quaternion newRotation = Quaternion.Euler(currentInteractableObjectRigidbody.rotation.eulerAngles + new Vector3(0f, 1f * rotateSpeed * Time.deltaTime, 0f));
+                currentInteractableObjectRigidbody.MoveRotation(newRotation);
+            }
+            if(Input.GetKey(KeyCode.Q))
+            {
+                Quaternion newRotation = Quaternion.Euler(currentInteractableObjectRigidbody.rotation.eulerAngles + new Vector3(0f, -1f * rotateSpeed * Time.deltaTime, 0f));
+                currentInteractableObjectRigidbody.MoveRotation(newRotation);
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if(currentInteractableObject != null && currentInteractableObjectRigidbody != null)
+        if(currentInteractableObjectRigidbody != null)
         {
             Vector3 holdPoint = mainCamera.transform.position + mainCamera.transform.forward * currentGrabDistance;
             Vector3 toDestination = holdPoint - currentInteractableObjectRigidbody.position;
