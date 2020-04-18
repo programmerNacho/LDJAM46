@@ -2117,7 +2117,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   noCollisionInteractionLayer: InteractableNoCollision
-  maxGrabDistance: 5
+  maxGrabDistance: 3
   minGrabDistance: 1
   zoomVelocity: 0.5
   rotateSpeed: 180
