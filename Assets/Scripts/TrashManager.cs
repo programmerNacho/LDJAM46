@@ -16,6 +16,7 @@ public class TrashManager : MonoBehaviour
     private bool cleaningMode = false;
 
     private Camera mainCamera;
+    //─────────────────────────────────────────────
     private void Start()
     {
         mainCamera = Camera.main;
@@ -30,20 +31,24 @@ public class TrashManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Ray ray = mainCamera.ViewportPointToRay(Vector3.one * 0.5f);
-        RaycastHit hit;
-
-
-        //if(Physics.Raycast(ray, out hit, maxGrabDistance, interactionLayer, QueryTriggerInteraction.Ignore))
-        //{
-
-        //}
-
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(0))
         {
-            currentTrashs[currentTrashs.Count - 1].active = false;
-            currentTrashs.RemoveAt(currentTrashs.Count - 1);
+            Ray ray = mainCamera.ViewportPointToRay(Vector3.one * 0.5f);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, maxGrabDistance, interactionLayer, QueryTriggerInteraction.Ignore))
+            {
+                if (hit.transform.GetComponent<BoxCollider>() != null)
+                {
+                    currentTrashs.Remove(hit.transform.gameObject);
+                    hit.transform.gameObject.active = false;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                currentTrashs[currentTrashs.Count - 1].active = false;
+                currentTrashs.RemoveAt(currentTrashs.Count - 1);
+            }
         }
     }
     public void GenerateTrash()
