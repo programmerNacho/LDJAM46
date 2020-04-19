@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Room : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Room : MonoBehaviour
     [SerializeField] Animator lDoor;
     [SerializeField] Animator rDoor;
     [SerializeField] Alarm alarm;
+    [SerializeField] EV_DoorObjectDetect objectDetect;
+    [SerializeField] TrashManager trashManager;
 
     [Header("Timers")]
     [SerializeField] float TimeFilming;
@@ -17,19 +20,25 @@ public class Room : MonoBehaviour
     float currentTime;
 
     // -- Variables --
-    int estado;
-    int contadorObjeto = 0;
+    private int estado;
+    private int contadorObjeto = 0;
+    private bool isCleaned = false;
 
     private void Start()
     {
         currentTime = TimeFilming;
+
+        objectDetect.objectDetected.AddListener(EventObjectIn);
+        objectDetect.onLeaveRoom.AddListener(OnLeaveRoom);
+
+        trashManager = GetComponent<TrashManager>();
+        trashManager.trashClean.AddListener(EventClean);
     }
 
     private void Update()
     {
         if (estado == 0 || estado == 1)
             UpdateTime();
-        Debug.Log(currentTime);
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
             State(1);
@@ -39,7 +48,7 @@ public class Room : MonoBehaviour
             State(0);
     }
     #region █ MAIN █
-    private void State(int _stat)
+    private void State(int _stat = -1)
     {
         switch (_stat)
         {
@@ -60,9 +69,14 @@ public class Room : MonoBehaviour
                 break;
             case 2:             // Clean
                 estado = 2;
+                trashManager.GenerateTrash();
+                isCleaned = false;
                 OpenDoor();
                 break;
             default:
+                contadorObjeto = 0;
+                isCleaned = false;
+                State(0);
                 break;
         }
     }
@@ -79,7 +93,7 @@ public class Room : MonoBehaviour
     private void OpenDoor()
     {
         CloseAllDoors();
-        alarm.Play();
+        alarm.PlayRed();
         lDoor.SetBool("isOpen", true);
         rDoor.SetBool("isOpen", true);
     }
@@ -112,5 +126,28 @@ public class Room : MonoBehaviour
         }
     }
     #endregion
-
+    #region █ EVENTS █
+    private void EventObjectIn()
+    {
+        if (estado == 1)
+        {
+            Debug.Log(estado);
+            Debug.Log("Objeto Dentro");
+            State(0);
+        }
+    }
+    public void EventClean()
+    {
+        isCleaned = true;
+        Debug.Log("Habitación Limpia");
+    }
+    public void OnLeaveRoom()
+    {
+        Debug.Log(isCleaned);
+        if (isCleaned)
+        {
+            State();
+        }
+    }
+    #endregion
 }
