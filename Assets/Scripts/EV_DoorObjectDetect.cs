@@ -12,6 +12,7 @@ public class EV_DoorObjectDetect : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
+            Destroy(other.gameObject, 2);
             objectDetected.Invoke();
         }
     }
