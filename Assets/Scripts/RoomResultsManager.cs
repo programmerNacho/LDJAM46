@@ -11,10 +11,13 @@ namespace LDJAM46
         [SerializeField]
         private float visualizationsPerSecondBase;
 
+        private VisualizationManager visualizationManager;
+
         private List<PornObjectInfo> pornObjectsInfo;
 
         private void Start()
         {
+            visualizationManager = FindObjectOfType<VisualizationManager>();
             pornObjectsInfo = new List<PornObjectInfo>();
         }
 
@@ -41,7 +44,7 @@ namespace LDJAM46
 
             float bonus = visualizationsPerSecondBase * percentageBonus;
             float result = visualizationsPerSecondBase + bonus;
-            Debug.Log(result);
+            visualizationManager.AddVisualizationsPerSecond(roomType, result);
         }
     }
 }
