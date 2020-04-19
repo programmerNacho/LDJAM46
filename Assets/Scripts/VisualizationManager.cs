@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LDJAM46
 {
@@ -50,6 +51,22 @@ namespace LDJAM46
                     Debug.Log(visualizationsChange);
                     servers[i].ChangeVisualizationsPerSecond(-visualizationsChange * Time.deltaTime);
                 }
+            }
+
+            bool lost = true;
+
+            for (int i = 0; i < servers.Length; i++)
+            {
+                if(servers[i].VisualizationsPerSecond != 0f)
+                {
+                    lost = false;
+                    break;
+                }
+            }
+
+            if(lost)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
