@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 5390121534657659510}
   - component: {fileID: 4005538750132860992}
   - component: {fileID: 7253611447239886009}
-  m_Layer: 0
+  - component: {fileID: -7326212703131706010}
+  - component: {fileID: 7242281036262774589}
+  - component: {fileID: -8723939236854968928}
+  m_Layer: 8
   m_Name: DildoPickle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +82,53 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &-7326212703131706010
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977599451038412901}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7242281036262774589
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977599451038412901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 8988b6aec3e1dfd49aa91e86d0915c11, type: 3}
+--- !u!114 &-8723939236854968928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977599451038412901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ffa0c51ab2cc446927ed0e6c9167f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pornObjectInfo:
+    categoryPercentages:
+    - category: 0
+      percentageBonus: 2
+    - category: 1
+      percentageBonus: 0.5
+    - category: 2
+      percentageBonus: 0.1
