@@ -40,13 +40,13 @@ public class TrashManager : MonoBehaviour
                 if (hit.transform.GetComponent<BoxCollider>() != null)
                 {
                     currentTrashs.Remove(hit.transform.gameObject);
-                    hit.transform.gameObject.active = false;
+                    hit.transform.gameObject.SetActive(false);
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                currentTrashs[currentTrashs.Count - 1].active = false;
+                currentTrashs[currentTrashs.Count - 1].SetActive(false);
                 currentTrashs.RemoveAt(currentTrashs.Count - 1);
             }
         }
@@ -62,11 +62,11 @@ public class TrashManager : MonoBehaviour
             {
                 if (Random.Range(0, 2) == 0)
                 {
-                    item.active = true;
+                    item.SetActive(true);
                     currentTrashs.Add(item);
                 }
                 else
-                    item.active = false;
+                    item.SetActive(false);
             }
         } while (currentTrashs.Count < 2 || currentTrashs.Count > 8);
     }
