@@ -46,7 +46,7 @@ MonoBehaviour:
   interactionLayer:
     serializedVersion: 2
     m_Bits: 768
-  noCollisionInteractionLayer: IntereactableNoCollision
+  noCollisionInteractionLayer: InteractableNoCollision
   maxGrabDistance: 3
   minGrabDistance: 1
   zoomVelocity: 5

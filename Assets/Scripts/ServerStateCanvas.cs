@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ServerStateCanvas : MonoBehaviour
+namespace LDJAM46
 {
-    [SerializeField]
-    private TextMeshProUGUI categoryText;
-    [SerializeField]
-    private TextMeshProUGUI temperatureText;
-    [SerializeField]
-    private TextMeshProUGUI changeTemperatureText;
-    [SerializeField]
-    private TextMeshProUGUI visualizationsText;
-    [SerializeField]
-    private TextMeshProUGUI totalVisualizationsText;
-
-    private Server server;
-
-    private void Start()
+    public class ServerStateCanvas : MonoBehaviour
     {
-        server = GetComponent<Server>();
-        categoryText.text = "Category: " + server.pornCategory;
-    }
+        [SerializeField]
+        private TextMeshProUGUI categoryText;
+        [SerializeField]
+        private TextMeshProUGUI temperatureText;
+        [SerializeField]
+        private TextMeshProUGUI changeTemperatureText;
+        [SerializeField]
+        private TextMeshProUGUI visualizationsText;
+        [SerializeField]
+        private TextMeshProUGUI totalVisualizationsText;
 
-    private void Update()
-    {
-        temperatureText.text = "Temperature: " + server.CurrentTemperature.ToString("F2");
-        changeTemperatureText.text = "Chan. Vel. Temp: " + server.CurrentTemperatureChangeVelocity.ToString("F2");
-        visualizationsText.text = "Visualizations Per Second: " + server.CurrentVisualizationPerSecond;
-        totalVisualizationsText.text = "Total Visualizations: " + server.CurrentTotalVisualizationInt;
+        private Server server;
+
+        private void Start()
+        {
+            server = GetComponent<Server>();
+            categoryText.text = "Category: " + server.PornCategory;
+        }
+
+        private void Update()
+        {
+            temperatureText.text = "Temperature: " + server.Temperature.ToString("F2");
+            changeTemperatureText.text = "Temperature Change: " + server.TemperatureChangePerSecond.ToString("F2");
+            visualizationsText.text = "Visualizations Per Second: " + server.VisualizationsPerSecond;
+            totalVisualizationsText.text = "Total Visualizations: " + server.TotalVisualizations;
+        }
     }
 }
