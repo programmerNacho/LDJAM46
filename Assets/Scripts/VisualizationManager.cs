@@ -40,6 +40,10 @@ namespace LDJAM46
         {
             for (int i = 0; i < timeWithoutUpdatingServer.Length; i++)
             {
+                timeWithoutUpdatingServer[i] += Time.deltaTime;
+            }
+            for (int i = 0; i < timeWithoutUpdatingServer.Length; i++)
+            {
                 if(timeWithoutUpdatingServer[i] >= minTimeWithoutUpdating)
                 {
                     float visualizationsChange = Mathf.Lerp(minPenalizationVisualization, maxPenalizationVisualization, timeWithoutUpdatingServer[i] / maxTimeWithoutUpdating);

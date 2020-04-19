@@ -127,7 +127,7 @@ Material:
     - _outline_tint: 0.5
     - _outline_width: 0.2
     m_Colors:
-    - _BaseColor: {r: 0.20874783, g: 0.8602941, b: 0.8333335, a: 1}
+    - _BaseColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
     - _Color: {r: 0.20874783, g: 0.8602941, b: 0.8333335, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
