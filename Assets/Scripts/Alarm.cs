@@ -8,6 +8,7 @@ public class Alarm : MonoBehaviour
     [SerializeField] ParticleSystem circle0;
     [SerializeField] ParticleSystem circle1;
     [SerializeField] Animator light;
+    //[SerializeField] AudioSource sound;
 
     private void Update()
     {
@@ -30,6 +31,7 @@ public class Alarm : MonoBehaviour
     public void Play()
     {
         Stop();
+        //sound.Play();
         PlayCircles();
         light.SetBool("LightActived", true);
     }

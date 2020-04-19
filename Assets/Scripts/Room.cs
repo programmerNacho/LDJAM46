@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using LDJAM46;
 
 public class Room : MonoBehaviour
 {
@@ -20,13 +21,15 @@ public class Room : MonoBehaviour
     float currentTime;
 
     // -- Variables --
-    private int estado;
+    public int estado;
     private int contadorObjeto = 0;
     private bool isCleaned = false;
+    private RoomResultsManager roomResultManager;
 
     private void Start()
     {
-        currentTime = TimeFilming;
+        roomResultManager = GetComponent<RoomResultsManager>();
+        currentTime = UnityEngine.Random.Range(8, TimeFilming);
 
         objectDetect.objectDetected.AddListener(EventObjectIn);
         objectDetect.onLeaveRoom.AddListener(OnLeaveRoom);
@@ -54,7 +57,8 @@ public class Room : MonoBehaviour
         {
             case 0:             // Filming
                 estado = 0;
-                currentTime = TimeFilming;
+                //currentTime = TimeFilming;
+                currentTime = UnityEngine.Random.Range(8,TimeFilming);
                 CloseAllDoors();
                 break;
             case 1:             // Object
@@ -67,8 +71,9 @@ public class Room : MonoBehaviour
                 else
                     State(2);
                 break;
-            case 2:             // Clean
+            case 2:             // Clean Mode
                 estado = 2;
+                roomResultManager.CalculateResults();
                 trashManager.GenerateTrash();
                 isCleaned = false;
                 OpenDoor();
@@ -127,12 +132,13 @@ public class Room : MonoBehaviour
     }
     #endregion
     #region █ EVENTS █
-    private void EventObjectIn()
+    private void EventObjectIn(Collider _value)
     {
         if (estado == 1)
         {
-            Debug.Log(estado);
             Debug.Log("Objeto Dentro");
+            roomResultManager.AddPornObjectInfo(_value.GetComponent<PornObject>().pornObjectInfo);
+            Destroy(_value.gameObject, 2);
             State(0);
         }
     }

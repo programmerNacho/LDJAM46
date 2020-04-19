@@ -7,17 +7,18 @@ public class TrashManager : MonoBehaviour
 {
     public UnityEvent trashClean;
 
+
+    [SerializeField] private float maxGrabDistance;
+    [SerializeField] private LayerMask interactionLayer;
+
     [SerializeField] List<GameObject> trashs;
                      List<GameObject> currentTrashs;
-
     private bool cleaningMode = false;
 
+    private Camera mainCamera;
     private void Start()
     {
-        //foreach (var item in trashs)
-        //{
-        //    item.active = false;
-        //}
+        mainCamera = Camera.main;
     }
     private void Update()
     {
@@ -29,6 +30,16 @@ public class TrashManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        Ray ray = mainCamera.ViewportPointToRay(Vector3.one * 0.5f);
+        RaycastHit hit;
+
+
+        //if(Physics.Raycast(ray, out hit, maxGrabDistance, interactionLayer, QueryTriggerInteraction.Ignore))
+        //{
+
+        //}
+
+
         if (Input.GetKeyDown(KeyCode.F))
         {
             currentTrashs[currentTrashs.Count - 1].active = false;
