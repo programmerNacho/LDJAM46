@@ -13,18 +13,24 @@ public class Alarm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            circle0.Play();
-            circle1.Play();
-            light.SetBool("LightActived", true);
-            //animator.enabled=true;
+            Play();
         }
         else if (Input.GetKeyDown(KeyCode.T))
         {
-            circle0.Stop();
-            circle1.Stop();
-            light.SetBool("LightActived", false);
-            //animator.enabled=false;
+            Stop();
         }
     }
 
+    public void Play()
+    {
+        circle0.Play();
+        circle1.Play();
+        light.SetBool("LightActived", true);
+    }
+    public void Stop()
+    {
+        circle0.Stop();
+        circle1.Stop();
+        light.SetBool("LightActived", false);
+    }
 }
