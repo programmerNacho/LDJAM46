@@ -48,7 +48,6 @@ namespace LDJAM46
                 if(timeWithoutUpdatingServer[i] >= minTimeWithoutUpdating)
                 {
                     float visualizationsChange = Mathf.Lerp(Mathf.Abs(minPenalizationVisualization), Mathf.Abs(maxPenalizationVisualization), (timeWithoutUpdatingServer[i] - minTimeWithoutUpdating) / maxTimeWithoutUpdating);
-                    Debug.Log(visualizationsChange);
                     servers[i].ChangeVisualizationsPerSecond(-visualizationsChange * Time.deltaTime);
                 }
             }

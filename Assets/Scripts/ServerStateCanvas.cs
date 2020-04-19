@@ -30,7 +30,7 @@ namespace LDJAM46
         {
             temperatureText.text = "Temperature: " + server.Temperature.ToString("F2");
             changeTemperatureText.text = "Temperature Change: " + server.TemperatureChangePerSecond.ToString("F2");
-            visualizationsText.text = "Visualizations Per Second: " + server.VisualizationsPerSecond;
+            visualizationsText.text = "Visualizations Per Second: " + Mathf.RoundToInt(server.VisualizationsPerSecond);
             totalVisualizationsText.text = "Total Visualizations: " + server.TotalVisualizations;
         }
     }
