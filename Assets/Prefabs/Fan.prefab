@@ -293,7 +293,7 @@ MonoBehaviour:
     MaxTemperatureBoost: 0
     MinTemperatureBoost: 0
     InstantTemperatureChangeBoost: 0
-    TemperatureChangePerSecondBoost: -1
+    TemperatureChangePerSecondBoost: -3.5
     BlockCooldownTimeBoost: 0
   coolingTrigger: {fileID: 3059465410622877413}
   fanParticle: {fileID: 3472529265964329421}
