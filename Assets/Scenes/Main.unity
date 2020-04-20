@@ -3123,9 +3123,9 @@ MonoBehaviour:
   objectDetect: {fileID: 1753403884}
   objectManager: {fileID: 117643843}
   trashManager: {fileID: 349818086}
-  TimeFilmingMin: 2
-  TimeFilmingMax: 3
-  TimeGiveMe: 6
+  TimeFilmingMin: 8
+  TimeFilmingMax: 15
+  TimeGiveMe: 15
   estado: 0
   pornObjectsList: []
 --- !u!1 &362744945
@@ -4928,9 +4928,9 @@ MonoBehaviour:
   objectDetect: {fileID: 1572989957}
   objectManager: {fileID: 117643843}
   trashManager: {fileID: 483660033}
-  TimeFilmingMin: 0
-  TimeFilmingMax: 0
-  TimeGiveMe: 6
+  TimeFilmingMin: 10
+  TimeFilmingMax: 20
+  TimeGiveMe: 15
   estado: 0
   pornObjectsList: []
 --- !u!114 &483660035
@@ -18526,8 +18526,8 @@ MonoBehaviour:
   objectDetect: {fileID: 227148958}
   objectManager: {fileID: 117643843}
   trashManager: {fileID: 1304704698}
-  TimeFilmingMin: 0
-  TimeFilmingMax: 0
+  TimeFilmingMin: 2
+  TimeFilmingMax: 3
   TimeGiveMe: 6
   estado: 0
   pornObjectsList: []

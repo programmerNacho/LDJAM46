@@ -15,5 +15,5 @@ MonoBehaviour:
   maxVisualizationsPerSecond: 2000
   maxTemperature: 100
   minTemperature: 20
-  maxTemperatureRaiseVelocity: 1
-  maxTemperatureDecreaseVelocity: -0.5
+  maxTemperatureRaiseVelocity: 5
+  maxTemperatureDecreaseVelocity: -0.2
