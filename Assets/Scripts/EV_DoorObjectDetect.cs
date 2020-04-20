@@ -14,6 +14,13 @@ public class EV_DoorObjectDetect : MonoBehaviour
     public UnityEvent onLeaveRoom;
     private Room room;
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.layer == 8)
+        {
+            objectDetected.Invoke(other);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         // Obtener el component Porn Object
