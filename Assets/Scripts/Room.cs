@@ -7,6 +7,10 @@ using LDJAM46;
 
 public class Room : MonoBehaviour
 {
+    public UnityEvent StartCleaning;
+    public UnityEvent FinishCleaning;
+
+    public UnityEvent GetObject;
 
     [Header("Doors")]
     [SerializeField] Animator lDoor;
@@ -83,6 +87,7 @@ public class Room : MonoBehaviour
                 break;
             case 2:             // Clean Mode
                 estado = 2;
+                StartCleaning.Invoke();
                 roomResultManager.CalculateResults();
                 trashManager.GenerateTrash();
                 isCleaned = false;
@@ -91,6 +96,7 @@ public class Room : MonoBehaviour
             default:
                 contadorObjeto = 0;
                 isCleaned = false;
+                FinishCleaning.Invoke();
                 State(0);
                 break;
         }
@@ -155,6 +161,7 @@ public class Room : MonoBehaviour
         if (estado == 1)
         {
             Debug.Log("Objeto Dentro");
+            GetObject.Invoke();
             isMovingObject = true;
             objectToRemove = _value.gameObject;
             currentTimeObject = TimeFilmingMin;
