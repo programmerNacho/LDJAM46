@@ -8,8 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Condom Blue
-    second: {fileID: 6371792571199247855, guid: 432d14b7e28a35242bc0282db4aa9e86,
-      type: 3}
+    second: {fileID: 2100000, guid: 2bb5af58cc7a5c24fb7abe1010eb00cb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

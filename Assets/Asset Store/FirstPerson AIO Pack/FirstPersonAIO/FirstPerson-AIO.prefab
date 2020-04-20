@@ -376,8 +376,8 @@ MonoBehaviour:
   headbobSideMovement: 0.5
   jumpLandIntensity: 3
   Volume: 5
-  jumpSound: {fileID: 0}
-  landSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 73f938638097f8042ad7842aa5b04ac5, type: 3}
+  landSound: {fileID: 8300000, guid: e06c6ae1948cafd45a952ab85ebe4fa7, type: 3}
   footStepSounds:
   - {fileID: 8300000, guid: fb6839219f2c6674996d76c7d9626311, type: 3}
   - {fileID: 8300000, guid: a2cf935dcad44514894bf910c443d507, type: 3}
