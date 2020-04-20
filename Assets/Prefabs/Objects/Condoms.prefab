@@ -225,11 +225,11 @@ MonoBehaviour:
   pornObjectInfo:
     categoryPercentages:
     - category: 0
-      percentageBonus: 0.3
+      percentageBonus: 3
     - category: 1
-      percentageBonus: 0.3
+      percentageBonus: 3
     - category: 2
-      percentageBonus: 0.3
+      percentageBonus: 3
 --- !u!65 &-140116494002733335
 BoxCollider:
   m_ObjectHideFlags: 0

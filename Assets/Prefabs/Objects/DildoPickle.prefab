@@ -129,6 +129,6 @@ MonoBehaviour:
     - category: 0
       percentageBonus: 2
     - category: 1
-      percentageBonus: 0.5
+      percentageBonus: 2
     - category: 2
-      percentageBonus: 0.1
+      percentageBonus: 2
