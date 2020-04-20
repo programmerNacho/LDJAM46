@@ -379,10 +379,10 @@ MonoBehaviour:
   jumpSound: {fileID: 0}
   landSound: {fileID: 0}
   footStepSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fsmode: 1
+  - {fileID: 8300000, guid: fb6839219f2c6674996d76c7d9626311, type: 3}
+  - {fileID: 8300000, guid: a2cf935dcad44514894bf910c443d507, type: 3}
+  - {fileID: 8300000, guid: 0b36ebf0a6b6c234c89643b5bb83ec59, type: 3}
+  fsmode: 0
   dynamicFootstep:
     materialMode: 0
     woodPhysMat:
