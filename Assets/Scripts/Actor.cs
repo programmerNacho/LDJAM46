@@ -16,7 +16,7 @@ public class Actor : MonoBehaviour
         if(currentAudioPlaceSelected)
         {
             currentAudioPlaceSelected.Stop();
-            currentAudioPlaceSelected.clip = audioClip.dialogue;
+            currentAudioPlaceSelected.clip = audioClip.dialogues[Random.Range(0, audioClip.dialogues.Length)];
             currentAudioPlaceSelected.Play();
         }
     }

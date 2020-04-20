@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ActorDialogue : MonoBehaviour
 {
-    public AudioClip dialogue;
+    public AudioClip[] dialogues;
 }
