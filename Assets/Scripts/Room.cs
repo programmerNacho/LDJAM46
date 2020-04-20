@@ -13,7 +13,10 @@ public class Room : MonoBehaviour
     [SerializeField] Animator rDoor;
     [SerializeField] Alarm alarm;
     [SerializeField] EV_DoorObjectDetect objectDetect;
-    [SerializeField] TrashManager trashManager;
+
+    [Header("Managers")]
+    [SerializeField] private ObjectManager objectManager;
+    [SerializeField] private TrashManager trashManager;
 
     [Header("Timers")]
     [SerializeField] float TimeFilmingMin;
@@ -22,11 +25,17 @@ public class Room : MonoBehaviour
     float currentTime;
     float currentTimeObject;
 
+
     // -- Variables --
     public int estado;
     private int contadorObjeto = 0;
     private bool isCleaned = false;
+    private bool isMovingObject = false;
     private RoomResultsManager roomResultManager;
+    private GameObject objectToRemove;
+
+    // -- Object list --
+    [SerializeField] private List<PornObject> pornObjectsList;
 
     private void Start()
     {
@@ -130,6 +139,14 @@ public class Room : MonoBehaviour
                     break;
             }
         }
+        currentTimeObject -= Time.deltaTime;
+        if(currentTimeObject <= 0 && isMovingObject)
+        {
+            Debug.Log("Objeto Eliminado");
+            objectToRemove.SetActive(false);
+            objectManager.RespawnObject(objectToRemove);
+            isMovingObject = false;
+        }
     }
     #endregion
     #region █ EVENTS █
@@ -138,8 +155,11 @@ public class Room : MonoBehaviour
         if (estado == 1)
         {
             Debug.Log("Objeto Dentro");
+            isMovingObject = true;
+            objectToRemove = _value.gameObject;
+            currentTimeObject = TimeFilmingMin;
+
             roomResultManager.AddPornObjectInfo(_value.GetComponent<PornObject>().pornObjectInfo);
-            Destroy(_value.gameObject, 2);
             State(0);
         }
     }
@@ -153,6 +173,7 @@ public class Room : MonoBehaviour
         Debug.Log(isCleaned);
         if (isCleaned)
         {
+            objectManager.RespawnObject(objectToRemove);
             State();
         }
     }

@@ -57,6 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f993b846775d6bb4cb7726690eaec4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectDetected:
+    m_PersistentCalls:
+      m_Calls: []
+  onLeaveRoom:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6200605824237434826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -234,8 +240,14 @@ MonoBehaviour:
   lDoor: {fileID: 6200605825432948798}
   rDoor: {fileID: 6200605825128749841}
   alarm: {fileID: 0}
-  TimeFilming: 3
+  objectDetect: {fileID: 0}
+  objectManager: {fileID: 0}
+  trashManager: {fileID: 0}
+  TimeFilmingMin: 0
+  TimeFilmingMax: 0
   TimeGiveMe: 4
+  estado: 0
+  pornObjectsList: []
 --- !u!1001 &6200605824104441066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +310,11 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 1f027cd5c40b5344fb229ca6067e8052, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1507
+      objectReference: {fileID: 0}
+    - target: {fileID: 751056789980409382, guid: 1f027cd5c40b5344fb229ca6067e8052,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f027cd5c40b5344fb229ca6067e8052, type: 3}
@@ -375,6 +392,11 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 1f027cd5c40b5344fb229ca6067e8052, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1507
+      objectReference: {fileID: 0}
+    - target: {fileID: 751056789980409382, guid: 1f027cd5c40b5344fb229ca6067e8052,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f027cd5c40b5344fb229ca6067e8052, type: 3}
