@@ -1063,6 +1063,12 @@ MonoBehaviour:
   - {fileID: 1928909726}
   - {fileID: 2025583776}
   - {fileID: 1145826221}
+  - {fileID: 1213712804}
+  - {fileID: 643885537}
+  - {fileID: 1598516682}
+  - {fileID: 464808888}
+  - {fileID: 1362692062}
+  - {fileID: 329174424}
 --- !u!1001 &125268500
 PrefabInstance:
   m_ObjectHideFlags: 0
