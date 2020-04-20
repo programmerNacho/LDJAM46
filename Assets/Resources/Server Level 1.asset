@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564b00654e317c547a7d250886d26bb5, type: 3}
   m_Name: Server Level 1
   m_EditorClassIdentifier: 
-  maxVisualizationsPerSecond: 1000
+  maxVisualizationsPerSecond: 2000
   maxTemperature: 100
   minTemperature: 20
   maxTemperatureRaiseVelocity: 1
-  maxTemperatureDecreaseVelocity: -0.2
+  maxTemperatureDecreaseVelocity: -0.5

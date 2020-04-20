@@ -20,6 +20,7 @@ public class Room : MonoBehaviour
     [SerializeField] float TimeFilmingMax;
     [SerializeField] float TimeGiveMe;
     float currentTime;
+    float currentTimeObject;
 
     // -- Variables --
     public int estado;

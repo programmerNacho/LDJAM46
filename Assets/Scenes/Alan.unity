@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomType: 0
-  visualizationsPerSecondBase: 100
+  visualizationsPerSecondBase: 200
 --- !u!114 &349818086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4734,7 +4734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomType: 2
-  visualizationsPerSecondBase: 100
+  visualizationsPerSecondBase: 200
 --- !u!1001 &485768265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18235,7 +18235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomType: 1
-  visualizationsPerSecondBase: 100
+  visualizationsPerSecondBase: 200
 --- !u!114 &1304704698
 MonoBehaviour:
   m_ObjectHideFlags: 0
