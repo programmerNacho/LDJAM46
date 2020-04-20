@@ -38,8 +38,8 @@ namespace LDJAM46
             if (!IsBlocked)
             {
                 VisualizationsPerSecond += visualizationsPerSecondChange;
-                VisualizationsPerSecond = Mathf.Clamp(VisualizationsPerSecond, 0f, attributes.MaxVisualizationsPerSecond);
             }
+            VisualizationsPerSecond = Mathf.Clamp(VisualizationsPerSecond, 0f, attributes.MaxVisualizationsPerSecond);
         }
 
         private void Start()
@@ -92,6 +92,7 @@ namespace LDJAM46
         {
             if(!IsBlocked)
             {
+                VisualizationsPerSecond = 0f;
                 StartCoroutine(BlockCooldown());
             }
         }

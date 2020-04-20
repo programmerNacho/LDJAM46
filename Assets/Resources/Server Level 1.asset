@@ -16,4 +16,4 @@ MonoBehaviour:
   maxTemperature: 100
   minTemperature: 20
   maxTemperatureRaiseVelocity: 1
-  maxTemperatureDecreaseVelocity: 0.25
+  maxTemperatureDecreaseVelocity: -0.2
