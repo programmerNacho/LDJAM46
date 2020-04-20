@@ -7,10 +7,12 @@ using LDJAM46;
 
 public class Room : MonoBehaviour
 {
-    public UnityEvent StartCleaning;
-    public UnityEvent FinishCleaning;
+    //█ EVENTS █
+    public UnityEvent StartCleaning;    // Cleaning mode
+    public UnityEvent FinishCleaning;   // Is clean and leave room
 
-    public UnityEvent GetObject;
+    public UnityEvent GetObject;        // Object enter scene
+    public UnityEvent CloseDoor;        // Close door
 
     [Header("Doors")]
     [SerializeField] Animator lDoor;
@@ -106,6 +108,7 @@ public class Room : MonoBehaviour
     private void CloseAllDoors()
     {
         alarm.Stop();
+        CloseDoor.Invoke();
         lDoor.SetBool("isHalfOpen", false);
         lDoor.SetBool("isOpen", false);
         rDoor.SetBool("isHalfOpen", false);
