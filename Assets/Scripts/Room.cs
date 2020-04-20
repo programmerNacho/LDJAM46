@@ -16,7 +16,8 @@ public class Room : MonoBehaviour
     [SerializeField] TrashManager trashManager;
 
     [Header("Timers")]
-    [SerializeField] float TimeFilming;
+    [SerializeField] float TimeFilmingMin;
+    [SerializeField] float TimeFilmingMax;
     [SerializeField] float TimeGiveMe;
     float currentTime;
 
@@ -29,7 +30,7 @@ public class Room : MonoBehaviour
     private void Start()
     {
         roomResultManager = GetComponent<RoomResultsManager>();
-        currentTime = UnityEngine.Random.Range(8, TimeFilming);
+        currentTime = UnityEngine.Random.Range(TimeFilmingMin, TimeFilmingMax);
 
         objectDetect.objectDetected.AddListener(EventObjectIn);
         objectDetect.onLeaveRoom.AddListener(OnLeaveRoom);
@@ -57,7 +58,7 @@ public class Room : MonoBehaviour
         {
             case 0:             // Filming
                 estado = 0;
-                currentTime = UnityEngine.Random.Range(8,TimeFilming);
+                currentTime = UnityEngine.Random.Range(TimeFilmingMin, TimeFilmingMax);
                 CloseAllDoors();
                 break;
             case 1:             // Object

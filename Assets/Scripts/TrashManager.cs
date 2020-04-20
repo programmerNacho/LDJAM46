@@ -29,8 +29,8 @@ public class TrashManager : MonoBehaviour
             trashClean.Invoke();
         }
 
-        //if (Input.GetMouseButtonDown(0))
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(0))
+            //if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = mainCamera.ViewportPointToRay(Vector3.one * 0.5f);
             RaycastHit hit;
