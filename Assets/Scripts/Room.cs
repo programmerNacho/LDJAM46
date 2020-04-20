@@ -57,7 +57,6 @@ public class Room : MonoBehaviour
         {
             case 0:             // Filming
                 estado = 0;
-                //currentTime = TimeFilming;
                 currentTime = UnityEngine.Random.Range(8,TimeFilming);
                 CloseAllDoors();
                 break;
