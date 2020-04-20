@@ -16,6 +16,7 @@ public class EV_DoorObjectDetect : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Obtener el component Porn Object
         if (other.gameObject.layer == 8)
         {
             objectDetected.Invoke(other);
