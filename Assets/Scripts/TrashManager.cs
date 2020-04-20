@@ -40,7 +40,6 @@ public class TrashManager : MonoBehaviour
                 {
                     bool hasremove = currentTrashs.Remove(hit.transform.gameObject);
                     hit.transform.gameObject.SetActive(false);
-                    Debug.Log("=== " + hasremove);
                 }
             }
         }
@@ -50,17 +49,6 @@ public class TrashManager : MonoBehaviour
         currentTrashs.Clear();
         cleaningMode = true;
 
-        //currentTrashs.Add(trashs[0]);
-        //currentTrashs.Add(trashs[1]);
-        //trashs[2].SetActive(false);
-        //trashs[3].SetActive(false);
-        //trashs[4].SetActive(false);
-        //trashs[5].SetActive(false);
-        //trashs[6].SetActive(false);
-        //trashs[7].SetActive(false);
-        //trashs[8].SetActive(false);
-        //trashs[9].SetActive(false);
-
         do
         {
             //currentTrashs.Clear();
@@ -69,10 +57,7 @@ public class TrashManager : MonoBehaviour
                 if (Random.Range(0, 2) == 0)
                 {
                     item.SetActive(true);
-                    //if (!currentTrashs.Contains(item))
-                    //{
                         currentTrashs.Add(item);
-                    //}
                 }
                 else
                 {
@@ -80,7 +65,6 @@ public class TrashManager : MonoBehaviour
                 }
             }
         } while (currentTrashs.Count < 2);
-        //} while (currentTrashs.Count < 2 || currentTrashs.Count > 8);
     }
 
 }
