@@ -8,9 +8,12 @@ namespace LDJAM46
         private ServerModification modification;
         [SerializeField]
         private Trigger coolingTrigger;
+        [SerializeField]
+        private ParticleSystem fanParticle;
 
         private void Start()
         {
+            fanParticle.gameObject.SetActive(false);
             coolingTrigger.OnEnter.AddListener(OnCoolingEnter);
             coolingTrigger.OnExit.AddListener(OnCoolingExit);
         }
@@ -20,6 +23,7 @@ namespace LDJAM46
             ServerModificationManager serverModificationManager = other.GetComponent<ServerModificationManager>();
             if (serverModificationManager != null)
             {
+                ActivateParticle(fanParticle);
                 serverModificationManager.AddModification(modification);
             }
         }
@@ -29,8 +33,17 @@ namespace LDJAM46
             ServerModificationManager serverModificationManager = other.GetComponent<ServerModificationManager>();
             if (serverModificationManager != null)
             {
+                DeactivateParticle(fanParticle);
                 serverModificationManager.RemoveModification(modification);
             }
+        }
+        private void ActivateParticle(ParticleSystem t_ptc)
+        {
+            t_ptc.gameObject.SetActive(true);
+        }
+        private void DeactivateParticle(ParticleSystem t_ptc)
+        {
+            t_ptc.gameObject.SetActive(false);
         }
     }
 }
