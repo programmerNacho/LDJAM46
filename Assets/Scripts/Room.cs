@@ -59,13 +59,14 @@ public class Room : MonoBehaviour
     {
         if (estado == 0 || estado == 1)
             UpdateTime();
-
+        /* ■ GOD MODE ■
         if (Input.GetKeyDown(KeyCode.Keypad1))
             State(1);
         else if (Input.GetKeyDown(KeyCode.Keypad2))
             State(2);
         else if (Input.GetKeyDown(KeyCode.Keypad0))
             State(0);
+        //*/
     }
     #region █ MAIN █
     private void State(int _stat = -1)
