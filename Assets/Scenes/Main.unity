@@ -2660,7 +2660,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 8300000, guid: fef61cddf814a2c49bf7a6c33791c766, type: 3}
+  - {fileID: 8300000, guid: 9ac6ff5d095fd16418356a478b5b189c, type: 3}
+  - {fileID: 8300000, guid: 45fa79a99faa5b94e936bab5d40726df, type: 3}
+  - {fileID: 8300000, guid: 7ae335db2de7da441a7be54ef21c9ef1, type: 3}
 --- !u!1 &209406581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,7 +4169,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 3
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6314,7 +6316,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -8701,7 +8703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 8300000, guid: f556827165c098547be10e15323aa490, type: 3}
+  - {fileID: 8300000, guid: 308359eb3bd98c4408d297e6a161eb3d, type: 3}
+  - {fileID: 8300000, guid: 494813967d0de1748a6fb7bdfd44507b, type: 3}
 --- !u!1001 &567939910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11675,7 +11678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 8300000, guid: eb609cace4a23614aa4af1f359757096, type: 3}
+  - {fileID: 8300000, guid: 28e517af2323f5a4ba024c4fe52b08f6, type: 3}
 --- !u!1 &753287620
 GameObject:
   m_ObjectHideFlags: 0
@@ -15592,7 +15595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 8300000, guid: 273aaa3c37354e84d8b31212301ed169, type: 3}
+  - {fileID: 8300000, guid: 9a8406cceaf723b4082c5f4b5860f13c, type: 3}
+  - {fileID: 8300000, guid: ca48d31f39db3b743923bf6b1ac33373, type: 3}
 --- !u!4 &957656520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 824950d6f1030c34684c4cf547b26119,
@@ -18676,7 +18680,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 3
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -18880,7 +18884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 8300000, guid: 73f938638097f8042ad7842aa5b04ac5, type: 3}
+  - {fileID: 8300000, guid: 9275e971b07c33743a6c56718e58e373, type: 3}
+  - {fileID: 8300000, guid: b5a61acb81573644485c267529af2388, type: 3}
 --- !u!1001 &1150242741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19449,7 +19454,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -20861,7 +20866,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -30542,7 +30547,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.5
+  MinDistance: 3
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
